@@ -25,11 +25,6 @@ def test_login_success():
 
 @allure.step('Perform failed login')
 def test_login_fail():
-    # import time
-    # from selenium.webdriver import Chrome
-    # from selenium.webdriver.chrome.service import Service
-    # from selenium.webdriver.common.by import By
-    # import web_pet_project.tests.resources as res
     path = r'C:\Users\PREDATOR\PycharmProjects\pythonProject\automation_project\drivers\chromedriver'
     driver = Chrome(service=Service(path))
     driver.get(base_url)
