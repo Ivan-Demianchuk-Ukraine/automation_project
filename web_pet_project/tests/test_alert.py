@@ -8,9 +8,10 @@ def test_cancel_alert():
     from selenium.webdriver import Chrome
     from selenium.webdriver.chrome.service import Service
     from selenium.webdriver.common.by import By
+    from web_pet_project.tests.resources import base_url
     path = r'C:\Users\PREDATOR\PycharmProjects\pythonProject\automation_project\drivers\chromedriver'
     driver = Chrome(service=Service(path))
-    driver.get('http://the-internet.herokuapp.com/')
+    driver.get(base_url)
     alert_link = driver.find_element(By.LINK_TEXT, 'JavaScript Alerts')
     alert_link.click()
     # time.sleep(2)
@@ -33,9 +34,10 @@ def test_accept_alert():
     from selenium.webdriver import Chrome
     from selenium.webdriver.chrome.service import Service
     from selenium.webdriver.common.by import By
+    from web_pet_project.tests.resources import base_url
     path = r'C:\Users\PREDATOR\PycharmProjects\pythonProject\automation_project\drivers\chromedriver'
     driver = Chrome(service=Service(path))
-    driver.get('http://the-internet.herokuapp.com/')
+    driver.get(base_url)
     alert_link = driver.find_element(By.LINK_TEXT, 'JavaScript Alerts')
     alert_link.click()
     # time.sleep(2)
