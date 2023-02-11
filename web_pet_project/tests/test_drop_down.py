@@ -1,13 +1,13 @@
 import allure
+import time
+from selenium.webdriver import Chrome
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from web_pet_project.tests.resources import base_url
 
 
 @allure.step('Perform selecting drop-down option-1')
 def test_dropdown_option_1():
-    import time
-    from selenium.webdriver import Chrome
-    from selenium.webdriver.chrome.service import Service
-    from selenium.webdriver.common.by import By
-    from web_pet_project.tests.resources import base_url
     path = r'C:\Users\PREDATOR\PycharmProjects\pythonProject\automation_project\drivers\chromedriver'
     driver = Chrome(service=Service(path))
     driver.get(base_url)
@@ -23,11 +23,6 @@ def test_dropdown_option_1():
 
 @allure.step('Perform selecting drop-down option-2')
 def test_dropdown_option_2():
-    import time
-    from selenium.webdriver import Chrome
-    from selenium.webdriver.chrome.service import Service
-    from selenium.webdriver.common.by import By
-    from web_pet_project.tests.resources import base_url
     path = r'C:\Users\PREDATOR\PycharmProjects\pythonProject\automation_project\drivers\chromedriver'
     driver = Chrome(service=Service(path))
     driver.get(base_url)
