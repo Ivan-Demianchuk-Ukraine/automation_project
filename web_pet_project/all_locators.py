@@ -64,8 +64,20 @@ class CheckboxPage:
 
 checkbox_instance = CheckboxPage()
 
-#
-# class DropdownPage:
-#
-#     @staticmethod
-#     def dropdown():
+
+class DropdownPage:
+
+    @staticmethod
+    def dropdown(driver):
+        return driver.find_element(By.ID, 'dropdown')
+
+    @staticmethod
+    def dropdown_option_1(driver):
+        return driver.find_element(By.XPATH, '//*[@id="dropdown"]/option[2]')
+
+    @staticmethod
+    def dropdown_option_2(driver):
+        return driver.find_element(By.XPATH, '//*[@id="dropdown"]/option[3]')
+
+
+dropdown_instance = DropdownPage()
