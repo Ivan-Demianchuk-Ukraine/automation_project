@@ -1,15 +1,9 @@
-from web_pet_project.resources import *
-
-
-@pytest.fixture()
-def path_fixture():
-    path = r'C:\Users\PREDATOR\PycharmProjects\pythonProject\automation_project\drivers\chromedriver'
-    return path
+from web_pet_project.helpers import *
 
 
 @allure.step('Perform selecting drop-down option-1')
-def test_dropdown_option_1(path_fixture):
-    driver = Chrome(service=Service(path_fixture))
+def test_dropdown_option_1():
+    driver = Chrome(service=Service(path_to_driver))
     driver.get(base_url)
     dropdown_link = driver.find_element(By.LINK_TEXT, 'Dropdown')
     dropdown_link.click()
@@ -22,8 +16,8 @@ def test_dropdown_option_1(path_fixture):
 
 
 @allure.step('Perform selecting drop-down option-2')
-def test_dropdown_option_2(path_fixture):
-    driver = Chrome(service=Service(path_fixture))
+def test_dropdown_option_2():
+    driver = Chrome(service=Service(path_to_driver))
     driver.get(base_url)
     dropdown_link = driver.find_element(By.LINK_TEXT, 'Dropdown')
     dropdown_link.click()

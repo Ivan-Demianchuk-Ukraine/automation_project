@@ -1,14 +1,9 @@
-from web_pet_project.resources import *
+from web_pet_project.helpers import *
 
-
-@pytest.fixture()
-def path_fixture():
-    path = r'C:\Users\PREDATOR\PycharmProjects\pythonProject\automation_project\drivers\chromedriver'
-    return path
 
 @allure.step('Perform selecting check-box 1')
-def test_check_box(path_fixture):
-    driver = Chrome(service=Service(path_fixture))
+def test_check_box():
+    driver = Chrome(service=Service(path_to_driver))
     driver.get(base_url)
     checkboxes_link = driver.find_element(By.XPATH, '//*[@id="content"]/ul/li[6]/a')
     checkboxes_link.click()
@@ -20,8 +15,8 @@ def test_check_box(path_fixture):
 
 
 @allure.step('Perform unchecking box 2')
-def test_uncheck_box(path_fixture):
-    driver = Chrome(service=Service(path_fixture))
+def test_uncheck_box():
+    driver = Chrome(service=Service(path_to_driver))
     driver.get(base_url)
     checkboxes_link = driver.find_element(By.XPATH, '//*[@id="content"]/ul/li[6]/a')
     checkboxes_link.click()

@@ -1,15 +1,9 @@
-from web_pet_project.resources import *
-
-
-@pytest.fixture()
-def path_fixture():
-    path = r'C:\Users\PREDATOR\PycharmProjects\pythonProject\automation_project\drivers\chromedriver'
-    return path
+from web_pet_project.helpers import *
 
 
 @allure.step('Perform success login')
-def test_login_success(path_fixture):
-    driver = Chrome(service=Service(path_fixture))
+def test_login_success():
+    driver = Chrome(service=Service(path_to_driver))
     driver.get(base_url)
     auth_link = driver.find_element(By.LINK_TEXT, 'Form Authentication')
     auth_link.click()
@@ -24,8 +18,8 @@ def test_login_success(path_fixture):
 
 
 @allure.step('Perform failed login')
-def test_login_fail(path_fixture):
-    driver = Chrome(service=Service(path_fixture))
+def test_login_fail():
+    driver = Chrome(service=Service(path_to_driver))
     driver.get(base_url)
     auth_link = driver.find_element(By.LINK_TEXT, 'Form Authentication')
     auth_link.click()

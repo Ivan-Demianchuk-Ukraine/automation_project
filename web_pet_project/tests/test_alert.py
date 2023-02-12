@@ -1,15 +1,9 @@
-from web_pet_project.resources import *
-
-
-@pytest.fixture()
-def path_fixture():
-    path = r'C:\Users\PREDATOR\PycharmProjects\pythonProject\automation_project\drivers\chromedriver'
-    return path
+from web_pet_project.helpers import *
 
 
 @allure.step('Perform canceling on alert')
-def test_cancel_alert(path_fixture):
-    driver = Chrome(service=Service(path_fixture))
+def test_cancel_alert():
+    driver = Chrome(service=Service(path_to_driver))
     driver.get(base_url)
     alert_link = driver.find_element(By.LINK_TEXT, 'JavaScript Alerts')
     alert_link.click()
@@ -27,8 +21,8 @@ def test_cancel_alert(path_fixture):
 
 
 @allure.step('Perform accepting on alert')
-def test_accept_alert(path_fixture):
-    driver = Chrome(service=Service(path_fixture))
+def test_accept_alert():
+    driver = Chrome(service=Service(path_to_driver))
     driver.get(base_url)
     alert_link = driver.find_element(By.LINK_TEXT, 'JavaScript Alerts')
     alert_link.click()
