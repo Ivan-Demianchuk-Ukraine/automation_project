@@ -1,10 +1,4 @@
-import allure
-import time
-from selenium.webdriver import Chrome
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from web_pet_project.tests.resources import base_url
-import pytest
+from web_pet_project.resources import *
 
 
 @pytest.fixture()
