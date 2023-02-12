@@ -1,12 +1,12 @@
 from web_pet_project.helpers import *
+from web_pet_project.all_locators import base_locator_instance
 
 
 @allure.step('Perform selecting drop-down option-1')
 def test_dropdown_option_1():
     driver = Chrome(service=Service(path_to_driver))
     driver.get(base_url)
-    dropdown_link = driver.find_element(By.LINK_TEXT, 'Dropdown')
-    dropdown_link.click()
+    base_locator_instance.dropdown_locator(driver).click()
     dropdown_locator = driver.find_element(By.ID, 'dropdown')
     dropdown_locator.click()
     # time.sleep(2)
@@ -19,8 +19,7 @@ def test_dropdown_option_1():
 def test_dropdown_option_2():
     driver = Chrome(service=Service(path_to_driver))
     driver.get(base_url)
-    dropdown_link = driver.find_element(By.LINK_TEXT, 'Dropdown')
-    dropdown_link.click()
+    base_locator_instance.dropdown_locator(driver).click()
     dropdown_locator = driver.find_element(By.ID, 'dropdown')
     dropdown_locator.click()
     # time.sleep(2)
