@@ -4,12 +4,18 @@ from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from web_pet_project.tests.resources import base_url
+import pytest
+
+
+@pytest.fixture()
+def path_fixture():
+    path = r'C:\Users\PREDATOR\PycharmProjects\pythonProject\automation_project\drivers\chromedriver'
+    return path
 
 
 @allure.step('Perform canceling on alert')
-def test_cancel_alert():
-    path = r'C:\Users\PREDATOR\PycharmProjects\pythonProject\automation_project\drivers\chromedriver'
-    driver = Chrome(service=Service(path))
+def test_cancel_alert(path_fixture):
+    driver = Chrome(service=Service(path_fixture))
     driver.get(base_url)
     alert_link = driver.find_element(By.LINK_TEXT, 'JavaScript Alerts')
     alert_link.click()
@@ -27,9 +33,8 @@ def test_cancel_alert():
 
 
 @allure.step('Perform accepting on alert')
-def test_accept_alert():
-    path = r'C:\Users\PREDATOR\PycharmProjects\pythonProject\automation_project\drivers\chromedriver'
-    driver = Chrome(service=Service(path))
+def test_accept_alert(path_fixture):
+    driver = Chrome(service=Service(path_fixture))
     driver.get(base_url)
     alert_link = driver.find_element(By.LINK_TEXT, 'JavaScript Alerts')
     alert_link.click()
