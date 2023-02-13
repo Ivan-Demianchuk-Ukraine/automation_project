@@ -13,8 +13,6 @@ with open(r'C:\Users\PREDATOR\PycharmProjects\pythonProject\automation_project\w
     config = json.load(f)
 base_url = config['base_url']
 
-path_to_driver = r'C:\Users\PREDATOR\PycharmProjects\pythonProject\automation_project\drivers\chromedriver'
-
 
 class TestException:
     pass

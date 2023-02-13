@@ -2,6 +2,7 @@ from web_pet_project.helpers import *
 from web_pet_project.all_locators import base_locator_instance, auth_instance
 from web_pet_project.confest import driver
 
+
 @allure.description('this test verifies that user can enter in the own account')
 @allure.severity(allure.severity_level.BLOCKER)
 @allure.epic('Custom_Epic')
