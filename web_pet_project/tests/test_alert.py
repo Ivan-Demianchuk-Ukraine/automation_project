@@ -1,13 +1,13 @@
 from web_pet_project.helpers import *
 from web_pet_project.all_locators import base_locator_instance, alert_instance
+from web_pet_project.confest import driver
 
 
 @allure.severity(allure.severity_level.BLOCKER)
 @allure.epic('Custom_Epic')
 @allure.feature('alert functionality')
 @allure.step('Perform canceling on alert')
-def test_cancel_alert():
-    driver = Chrome(service=Service(path_to_driver))
+def test_cancel_alert(driver):
     driver.get(base_url)
     base_locator_instance.alert_locator(driver).click()
     # time.sleep(2)
@@ -22,8 +22,7 @@ def test_cancel_alert():
 @allure.epic('Custom_Epic')
 @allure.feature('alert functionality')
 @allure.step('Perform accepting on alert')
-def test_accept_alert():
-    driver = Chrome(service=Service(path_to_driver))
+def test_accept_alert(driver):
     driver.get(base_url)
     base_locator_instance.alert_locator(driver).click()
     # time.sleep(2)
